@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="s2t">
+  <title id="s2t">Mock screenshot: hive and paths (concept art)</title>
+  <rect width="640" height="360" fill="#1e2a22"/>
+  <rect x="0" y="0" width="640" height="28" fill="#121618" opacity="0.9"/>
+  <text x="12" y="19" fill="#8a9" font-family="monospace" font-size="12">WILDER  concept frame</text>
+  <!-- hex hive -->
+  <path d="M320 100 L380 135 L380 205 L320 240 L260 205 L260 135 Z" fill="#d4a84b" stroke="#8b6914" stroke-width="2"/>
+  <path d="M320 120 L350 140 L350 190 L320 210 L290 190 L290 140 Z" fill="#2a1810"/>
+  <!-- dotted paths -->
+  <path d="M320 240 Q400 280 480 200" fill="none" stroke="#7bc47a" stroke-width="3" stroke-dasharray="8 6" opacity="0.6"/>
+  <path d="M320 240 Q240 280 160 200" fill="none" stroke="#7bc47a" stroke-width="3" stroke-dasharray="8 6" opacity="0.6"/>
+  <circle cx="480" cy="200" r="5" fill="#f4d03f"/><circle cx="160" cy="200" r="5" fill="#f4d03f"/>
+  <text x="320" y="330" text-anchor="middle" fill="#6a8a6a" font-family="sans-serif" font-size="11" opacity="0.75">Placeholder art  not final build</text>
+</svg>

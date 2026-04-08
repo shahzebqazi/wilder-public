@@ -3,231 +3,346 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Wilder — Cozy gardening RTS</title>
-  <meta name="description" content="Wilder is a cozy gardening RTS: tend your hive, explore a living garden, and grow something worth protecting. Coming soon." />
+  <title>Wilder — Gank Mid Studios</title>
+  <meta name="description" content="Wilder: a cozy gardening RTS from Gank Mid Studios. Tend your hive, explore, grow. Coming soon." />
   <meta property="og:title" content="Wilder — Cozy gardening RTS" />
-  <meta property="og:description" content="Tend your hive, explore, and grow a living garden. A relaxing game to learn, depth to master." />
+  <meta property="og:description" content="From Gank Mid Studios. Command your workers, expand your hive, explore a living garden." />
   <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#0f1712" />
+  <meta property="og:image" content="https://sqazi.sh/wilder-public/assets/cartridge.svg" />
+  <meta name="theme-color" content="#0a0a0c" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="me" href="https://social.devilplan.com/@willy" />
   <style>
     :root {
-      --bg: #0c1210;
-      --bg2: #152018;
-      --fg: #e6eee8;
-      --muted: #8fa396;
-      --accent: #7bc47a;
-      --accent-dim: #4a8f4e;
-      --card: rgba(255, 255, 255, 0.04);
-      --border: rgba(255, 255, 255, 0.08);
-      --max: 56rem;
+      --void: #0a0a0c;
+      --panel: #121214;
+      --line: #2a2a2e;
+      --text: #e6e6e2;
+      --muted: #8c8c88;
+      --rust: #b33a2c;
+      --rust-dim: #7a261c;
+      --garden: #5a9a52;
+      --garden-dim: #3d6b38;
+      --max: 58rem;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
       min-height: 100vh;
-      font-family: "DM Sans", system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--fg);
-      line-height: 1.65;
-      font-size: 1.05rem;
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      background: var(--void);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 1.02rem;
     }
-    .hero {
-      position: relative;
-      padding: clamp(2.5rem, 8vw, 5rem) 1.5rem 4rem;
-      background:
-        radial-gradient(ellipse 100% 80% at 50% -20%, rgba(74, 143, 78, 0.25) 0%, transparent 55%),
-        radial-gradient(ellipse 80% 50% at 100% 0%, rgba(30, 60, 45, 0.4) 0%, transparent 50%),
-        linear-gradient(180deg, var(--bg2) 0%, var(--bg) 45%);
-      border-bottom: 1px solid var(--border);
-    }
-    .inner {
-      max-width: var(--max);
-      margin: 0 auto;
-    }
-    .eyebrow {
-      font-size: 0.8rem;
+    a { color: var(--garden); text-decoration: none; }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    .studio-bar {
+      background: linear-gradient(180deg, #141416 0%, #0e0e10 100%);
+      border-bottom: 1px solid var(--line);
+      padding: 0.65rem 1.25rem;
+      font-size: 0.75rem;
       font-weight: 600;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--accent);
-      margin: 0 0 1rem;
-    }
-    h1 {
-      font-family: "Fraunces", Georgia, serif;
-      font-weight: 600;
-      font-size: clamp(2.4rem, 6vw, 3.35rem);
-      line-height: 1.12;
-      letter-spacing: -0.03em;
-      margin: 0 0 1.25rem;
-      max-width: 14ch;
-    }
-    .lead {
-      font-size: 1.2rem;
-      color: var(--muted);
-      max-width: 38ch;
-      margin: 0 0 2rem;
-    }
-    .cta-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+    .studio-bar a.studio-name {
+      color: var(--text);
+      text-decoration: none;
+    }
+    .studio-bar a.studio-name:hover { color: var(--rust); text-decoration: none; }
+    .studio-tag { color: var(--muted); font-weight: 400; letter-spacing: 0.12em; }
+    .hero {
+      padding: clamp(2rem, 5vw, 3.5rem) 1.5rem 3rem;
+      border-bottom: 1px solid var(--line);
+      background:
+        radial-gradient(ellipse 70% 50% at 80% 20%, rgba(179, 58, 44, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse 50% 40% at 10% 60%, rgba(90, 154, 82, 0.08) 0%, transparent 45%),
+        var(--void);
+    }
+    .hero-grid {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
       align-items: center;
     }
+    @media (min-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
+      .hero-visual { justify-self: end; }
+    }
+    .eyebrow {
+      color: var(--rust);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin: 0 0 0.75rem;
+    }
+    h1 {
+      font-family: Oswald, sans-serif;
+      font-weight: 700;
+      font-size: clamp(2.5rem, 6vw, 3.75rem);
+      line-height: 1.05;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      margin: 0 0 1rem;
+      color: var(--text);
+    }
+    .lead {
+      color: var(--muted);
+      font-size: 1.12rem;
+      max-width: 36ch;
+      margin: 0 0 1.75rem;
+    }
+    .lead strong { color: #c4c4c0; font-weight: 600; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
     .btn {
       display: inline-block;
-      padding: 0.75rem 1.35rem;
-      border-radius: 0.5rem;
-      font-weight: 600;
+      padding: 0.7rem 1.25rem;
+      font-family: Oswald, sans-serif;
       font-size: 0.95rem;
-      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-radius: 2px;
       border: 1px solid transparent;
-      transition: transform 0.15s ease, background 0.15s ease;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
     }
-    .btn:hover { transform: translateY(-1px); }
-    .btn-primary {
-      background: linear-gradient(165deg, var(--accent) 0%, var(--accent-dim) 100%);
-      color: #0a100c;
+    .btn-rust {
+      background: linear-gradient(180deg, var(--rust) 0%, var(--rust-dim) 100%);
+      color: #fff;
+      border-color: #5a1a14;
     }
+    .btn-rust:hover { filter: brightness(1.08); text-decoration: none; }
     .btn-ghost {
-      border-color: var(--border);
-      color: var(--fg);
+      border-color: var(--line);
+      color: var(--text);
       background: transparent;
     }
+    .btn-ghost:hover { border-color: var(--muted); text-decoration: none; }
     .btn[aria-disabled="true"] {
-      opacity: 0.55;
+      opacity: 0.5;
       cursor: not-allowed;
-      transform: none;
+      pointer-events: none;
     }
-    section {
-      padding: clamp(3rem, 6vw, 4.5rem) 1.5rem;
+    .cartridge-wrap {
+      max-width: 20rem;
+      margin: 0 auto;
+      filter: drop-shadow(0 12px 32px rgba(0,0,0,0.55));
     }
-    section.alt { background: var(--bg2); border-top: 1px solid var(--border); }
+    .cartridge-wrap img { width: 100%; height: auto; display: block; }
+    .shots {
+      padding: clamp(2.5rem, 5vw, 4rem) 1.5rem;
+      background: var(--panel);
+      border-bottom: 1px solid var(--line);
+    }
+    .inner { max-width: var(--max); margin: 0 auto; }
     h2 {
-      font-family: "Fraunces", Georgia, serif;
-      font-size: clamp(1.5rem, 3vw, 1.85rem);
-      margin: 0 0 1.5rem;
-      letter-spacing: -0.02em;
+      font-family: Oswald, sans-serif;
+      font-weight: 600;
+      font-size: clamp(1.35rem, 3vw, 1.75rem);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin: 0 0 0.35rem;
     }
-    .grid {
+    .section-sub {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin: 0 0 1.75rem;
+      max-width: 42ch;
+    }
+    .shot-grid {
       display: grid;
-      gap: 1.25rem;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+    .shot {
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      overflow: hidden;
+      background: #0e0e10;
+      aspect-ratio: 16 / 9;
+    }
+    .shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .shot figcaption {
+      padding: 0.5rem 0.65rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+    }
+    section.features {
+      padding: clamp(2.5rem, 5vw, 4rem) 1.5rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .feature-grid {
+      display: grid;
+      gap: 1rem;
       grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     }
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 0.75rem;
-      padding: 1.35rem 1.35rem 1.5rem;
+    .feature {
+      border: 1px solid var(--line);
+      padding: 1.25rem 1.35rem;
+      border-radius: 4px;
+      background: rgba(255,255,255,0.02);
     }
-    .card h3 {
-      margin: 0 0 0.5rem;
+    .feature h3 {
+      font-family: Oswald, sans-serif;
       font-size: 1.05rem;
-      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin: 0 0 0.5rem;
+      color: var(--garden);
     }
-    .card p {
+    .feature p { margin: 0; font-size: 0.95rem; color: var(--muted); }
+    .contact {
+      padding: clamp(2rem, 4vw, 3rem) 1.5rem;
+      background: linear-gradient(180deg, #0e0e12 0%, var(--void) 100%);
+      border-bottom: 1px solid var(--line);
+    }
+    .contact-list {
+      list-style: none;
       margin: 0;
-      font-size: 0.95rem;
-      color: var(--muted);
+      padding: 0;
+      display: grid;
+      gap: 0.85rem;
+      max-width: 32rem;
     }
-    .icon {
-      width: 2.25rem;
-      height: 2.25rem;
-      margin-bottom: 0.75rem;
-      opacity: 0.9;
+    .contact-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .contact-list .label {
+      font-family: Oswald, sans-serif;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      min-width: 6rem;
     }
     footer {
-      padding: 2.5rem 1.5rem 3rem;
-      border-top: 1px solid var(--border);
-      font-size: 0.875rem;
+      padding: 2rem 1.5rem 2.75rem;
+      font-size: 0.82rem;
       color: var(--muted);
     }
-    footer a { color: var(--accent); text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
-    .note {
-      margin-top: 1.5rem;
-      padding: 1rem 1.1rem;
-      border-radius: 0.5rem;
-      background: rgba(123, 196, 122, 0.08);
-      border: 1px solid rgba(123, 196, 122, 0.2);
-      font-size: 0.9rem;
-      color: var(--muted);
-      max-width: 40rem;
-    }
+    footer .inner { display: flex; flex-direction: column; gap: 0.5rem; }
+    footer a { color: var(--garden-dim); }
   </style>
 </head>
 <body>
+  <div class="studio-bar">
+    <a class="studio-name" href="https://gankmid.co/">Gank Mid Studios</a>
+    <span class="studio-tag">Heaviest metal games · Toronto</span>
+  </div>
+
   <header class="hero">
-    <div class="inner">
-      <p class="eyebrow">Coming soon</p>
-      <h1>Grow a garden worth defending</h1>
-      <p class="lead">
-        <strong>Wilder</strong> is a cozy <strong>gardening RTS</strong> — command your workers,
-        expand your hive, and explore a living world at your own pace.
-      </p>
-      <div class="cta-row">
-        <span class="btn btn-primary" aria-disabled="true" title="Link will be added when the store page is ready">Wishlist — soon</span>
-        <a class="btn btn-ghost" href="https://github.com/shahzebqazi/wilder-public">Site repository</a>
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">Coming soon</p>
+        <h1>Wilder</h1>
+        <p class="lead">
+          A cozy <strong>gardening RTS</strong> — build your hive, guide your workers,
+          and grow a living world. From <strong>Gank Mid Studios</strong>.
+        </p>
+        <div class="cta-row">
+          <span class="btn btn-rust" aria-disabled="true" title="Store link when available">Wishlist — soon</span>
+          <a class="btn btn-ghost" href="https://gankmid.co/">More from the studio</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="cartridge-wrap">
+          <img src="assets/cartridge.svg" width="320" height="420" alt="Fictional Wilder game cartridge with garden artwork. Not final product." />
+        </div>
       </div>
     </div>
   </header>
 
-  <main>
-    <section aria-labelledby="features-heading">
-      <div class="inner">
-        <h2 id="features-heading">What to expect</h2>
-        <div class="grid">
-          <article class="card">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <path d="M12 3v3M5 6l2 2M19 6l-2 2M5 18l2-2M19 18l-2-2M12 21v-3" stroke-linecap="round"/>
-              <circle cx="12" cy="12" r="4"/>
-            </svg>
-            <h3>Strategic tending</h3>
-            <p>Plan routes, balance growth, and react when the garden pushes back. Easy to pick up; room to optimize.</p>
-          </article>
-          <article class="card">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <path d="M3 12h4l2-7 4 14 2-7h6" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <h3>A world that grows with you</h3>
-            <p>Explore, expand, and return with new ideas. Built for runs that feel fresh without losing a hand-crafted soul.</p>
-          </article>
-          <article class="card">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <path d="M12 8v4l3 2M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <h3>Your pace</h3>
-            <p>Relaxing sessions or longer sits — Wilder is meant to respect your time and your curiosity.</p>
-          </article>
-        </div>
+  <section class="shots" aria-labelledby="shots-h">
+    <div class="inner">
+      <h2 id="shots-h">Looks like gameplay (it isn’t yet)</h2>
+      <p class="section-sub">Stylized placeholder frames — mood only. No story spoilers, not captured from a build.</p>
+      <div class="shot-grid">
+        <figure class="shot">
+          <img src="assets/shot-garden.svg" width="640" height="360" alt="Placeholder: bright isometric garden concept" loading="lazy" />
+          <figcaption>Concept — garden overview</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/shot-hive.svg" width="640" height="360" alt="Placeholder: hive and worker paths concept" loading="lazy" />
+          <figcaption>Concept — hive &amp; routes</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/shot-night.svg" width="640" height="360" alt="Placeholder: night garden concept" loading="lazy" />
+          <figcaption>Concept — night in the garden</figcaption>
+        </figure>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="alt" aria-labelledby="stay-heading">
-      <div class="inner">
-        <h2 id="stay-heading">Stay in the loop</h2>
-        <p style="color: var(--muted); max-width: 36rem; margin: 0 0 1rem;">
-          Wishlist and announcement links will appear here when the game has a public store page.
-        </p>
-        <p class="note" role="status">
-          Follow development updates through this site’s repository for small fixes and copy changes only.
-        </p>
+  <section class="features" aria-labelledby="feat-h">
+    <div class="inner">
+      <h2 id="feat-h">What to expect</h2>
+      <p class="section-sub">Straight talk — the same tone as the rest of our studio site.</p>
+      <div class="feature-grid">
+        <article class="feature">
+          <h3>Strategic tending</h3>
+          <p>Plan routes, balance growth, and react when the garden pushes back.</p>
+        </article>
+        <article class="feature">
+          <h3>Replayable runs</h3>
+          <p>Explore and expand; built for sessions that feel fresh without losing craft.</p>
+        </article>
+        <article class="feature">
+          <h3>Your pace</h3>
+          <p>Short sits or long ones — Wilder respects your time.</p>
+        </article>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <section class="contact" aria-labelledby="contact-h">
+    <div class="inner">
+      <h2 id="contact-h">Contact &amp; feeds</h2>
+      <p class="section-sub">Studio and dev links (Wilder-specific news will land here when ready).</p>
+      <ul class="contact-list">
+        <li>
+          <span class="label">Studio</span>
+          <a href="https://gankmid.co/">gankmid.co</a>
+        </li>
+        <li>
+          <span class="label">Email</span>
+          <a href="mailto:code@sqazi.sh">code@sqazi.sh</a>
+        </li>
+        <li>
+          <span class="label">Mastodon</span>
+          <a rel="me" href="https://social.devilplan.com/@willy">@willy@social.devilplan.com</a>
+        </li>
+        <li>
+          <span class="label">Matrix</span>
+          <a href="https://matrix.to/#/@metalmasteringengineer:matrix.org">@metalmasteringengineer:matrix.org</a>
+        </li>
+        <li>
+          <span class="label">Site repo</span>
+          <a href="https://github.com/shahzebqazi/wilder-public">github.com/shahzebqazi/wilder-public</a>
+        </li>
+      </ul>
+    </div>
+  </section>
 
   <footer>
     <div class="inner">
-      <p style="margin: 0 0 0.5rem;">
-        © <span id="y">2026</span> Wilder. Gardening RTS — in development.
-      </p>
-      <p style="margin: 0;">
-        <a href="https://github.com/shahzebqazi/wilder-public">GitHub</a>
-        · Marketing &amp; community site only — not the game source.
-      </p>
+      <p style="margin:0;">© <span id="y">2026</span> Gank Mid Studios · <strong>Wilder</strong> (in development)</p>
+      <p style="margin:0;">Marketing site only — not the game source. <a href="https://github.com/shahzebqazi/wilder-public">GitHub</a></p>
     </div>
   </footer>
   <script>

@@ -1,16 +1,27 @@
 # Wilder — public site
 
-This repository contains the **promotional website** and **community-facing** files for **Wilder** only.
+Promotional site for **Wilder** (Gank Mid Studios). **Static** `index.html` + `assets/` — no build step.
 
-- **No game source** lives here.
-- **No spoilers** — treat this repo like a **trailer-safe** zone.
-- **No jokes, memes, or ironic decoy copy** — voice is **straight** and **professional**.
-- **Positioning:** Wilder is a **cozy gardening RTS / RPG** — grow, tend, explore, and build your garden.
+## Content policy
 
-**Live site (GitHub Pages):** [sqazi.sh/wilder-public/](http://sqazi.sh/wilder-public/)
+- **No game source** — marketing only.
+- **No spoilers** — trailer-safe copy.
+- **No jokes / meme tone** — straight, professional, aligned with [gankmid.co](https://gankmid.co/).
 
-The page is a **single static** `index.html` (no build step). Edit copy and styles there; keep **trailer-safe**, **professional** tone.
+## Assets
 
-Issues welcome for **typos on the site** or **broken links**.
+- **`assets/cartridge.svg`** — Fictional cartridge art (gardener + abstract nine muse pillars). Not final product.
+- **`assets/shot-*.svg`** — Placeholder “screenshots” (concept art only, not real captures).
 
-The **game** is developed in a **private** repository.
+## Contact (also on the page)
+
+| | |
+|--|--|
+| Studio | [gankmid.co](https://gankmid.co/) |
+| Email | [code@sqazi.sh](mailto:code@sqazi.sh) |
+| Mastodon | [@willy@social.devilplan.com](https://social.devilplan.com/@willy) |
+| Matrix | [@metalmasteringengineer:matrix.org](https://matrix.to/#/@metalmasteringengineer:matrix.org) |
+
+**Live (GitHub Pages):** [sqazi.sh/wilder-public/](http://sqazi.sh/wilder-public/)
+
+Issues: typos and broken links welcome.

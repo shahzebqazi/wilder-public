@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 420" width="320" height="420" role="img" aria-labelledby="cartTitle cartDesc">
+  <title id="cartTitle">Wilder  game cartridge art</title>
+  <desc id="cartDesc">Stylized fictional game cartridge with garden fantasy artwork. Not final in-game graphics.</desc>
+  <defs>
+    <linearGradient id="plastic" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4a4a52"/>
+      <stop offset="40%" stop-color="#35353c"/>
+      <stop offset="100%" stop-color="#2a2a30"/>
+    </linearGradient>
+    <linearGradient id="labelSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1a2840"/>
+      <stop offset="55%" stop-color="#0d2818"/>
+      <stop offset="100%" stop-color="#0a1a0f"/>
+    </linearGradient>
+    <radialGradient id="moon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f5f0dc"/>
+      <stop offset="100%" stop-color="#c9c4a8"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <!-- cartridge body -->
+  <rect x="24" y="8" width="272" height="380" rx="14" fill="url(#plastic)" stroke="#1e1e24" stroke-width="3"/>
+  <rect x="36" y="22" width="248" height="200" rx="8" fill="#1a1a20" stroke="#2d2d36" stroke-width="2"/>
+  <!-- label art -->
+  <rect x="42" y="28" width="236" height="188" rx="6" fill="url(#labelSky)"/>
+  <!-- moon -->
+  <circle cx="220" cy="58" r="22" fill="url(#moon)" opacity="0.95"/>
+  <!-- stars -->
+  <circle cx="70" cy="48" r="1.5" fill="#c8d4ff" opacity="0.8"/>
+  <circle cx="95" cy="62" r="1" fill="#c8d4ff" opacity="0.6"/>
+  <circle cx="120" cy="42" r="1.2" fill="#c8d4ff" opacity="0.7"/>
+  <!-- garden silhouette -->
+  <ellipse cx="160" cy="175" rx="100" ry="28" fill="#0d3018" opacity="0.9"/>
+  <path d="M60 175 Q100 130 160 140 Q220 130 260 175 Z" fill="#145a28"/>
+  <!-- abstract "nine muses"  pillar silhouettes (no names, no story) -->
+  <g fill="#3d2a50" opacity="0.85">
+    <path d="M52 175 L58 120 L64 175 Z"/>
+    <path d="M76 175 L82 115 L88 175 Z"/>
+    <path d="M100 175 L106 118 L112 175 Z"/>
+    <path d="M124 175 L130 112 L136 175 Z"/>
+    <path d="M148 175 L154 108 L160 175 Z"/>
+    <path d="M172 175 L178 112 L184 175 Z"/>
+    <path d="M196 175 L202 118 L208 175 Z"/>
+    <path d="M220 175 L226 115 L232 175 Z"/>
+    <path d="M244 175 L250 120 L256 175 Z"/>
+  </g>
+  <!-- tiny flower dots (decorative) -->
+  <g fill="#7bc47a" opacity="0.7">
+    <circle cx="88" cy="158" r="3"/><circle cx="132" cy="152" r="2.5"/><circle cx="188" cy="150" r="3"/><circle cx="228" cy="158" r="2.5"/>
+  </g>
+  <!-- gardener silhouette -->
+  <g fill="#1a1410">
+    <ellipse cx="118" cy="168" rx="14" ry="8"/>
+    <path d="M108 168 L108 195 L128 195 L128 168 Q118 160 108 168"/>
+    <ellipse cx="118" cy="152" rx="10" ry="9"/>
+    <path d="M100 148 Q118 128 136 148 L132 152 Q118 138 104 152 Z"/>
+    <rect x="112" y="178" width="4" height="22" rx="1"/>
+    <rect x="120" y="178" width="4" height="22" rx="1"/>
+    <path d="M130 182 L145 175 L142 188 Z" fill="#3d5c3a"/>
+  </g>
+  <!-- title on label -->
+  <text x="160" y="108" text-anchor="middle" fill="#e8f4e8" font-family="system-ui,sans-serif" font-weight="800" font-size="28" letter-spacing="0.15em">WILDER</text>
+  <text x="160" y="128" text-anchor="middle" fill="#8faa8a" font-family="system-ui,sans-serif" font-size="9" letter-spacing="0.25em">GARDENING RTS</text>
+  <!-- bottom slot -->
+  <rect x="100" y="360" width="120" height="16" rx="3" fill="#25252c" stroke="#3a3a44"/>
+  <rect x="48" y="392" width="224" height="12" rx="2" fill="#1c1c22"/>
+  <!-- screws -->
+  <circle cx="40" cy="340" r="5" fill="#8a7a50" stroke="#5a5038"/><circle cx="280" cy="340" r="5" fill="#8a7a50" stroke="#5a5038"/>
+</svg>
