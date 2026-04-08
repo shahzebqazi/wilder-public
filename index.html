@@ -2,6 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <script>
+    (function () {
+      var p = location.pathname.replace(/\/index\.html?$/i, "");
+      if (!p.endsWith("/")) p += "/";
+      var b = document.createElement("base");
+      b.href = p;
+      var m = document.querySelector("meta[charset]");
+      if (m) m.parentNode.insertBefore(b, m.nextSibling);
+      else document.head.insertBefore(b, document.head.firstChild);
+    })();
+  </script>
+  <link rel="preload" as="image" href="assets/cartridge.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Wilder — Gank Mid Studios</title>
   <meta name="description" content="Wilder: a cozy gardening RTS from Gank Mid Studios. Tend your hive, explore, grow. Coming soon." />
