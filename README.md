@@ -7,7 +7,9 @@ This repository contains the **promotional website** and **community-facing** fi
 - **No jokes, memes, or ironic decoy copy** — voice is **straight** and **professional**.
 - **Positioning:** Wilder is a **cozy gardening RTS / RPG** — grow, tend, explore, and build your garden.
 
-**Live site (GitHub Pages):** [sqazi.sh/wilder-public/](http://sqazi.sh/wilder-public/) (or Pages URL from repo settings).
+**Live site (GitHub Pages):** [sqazi.sh/wilder-public/](http://sqazi.sh/wilder-public/)
+
+The page is a **single static** `index.html` (no build step). Edit copy and styles there; keep **trailer-safe**, **professional** tone.
 
 Issues welcome for **typos on the site** or **broken links**.
 
