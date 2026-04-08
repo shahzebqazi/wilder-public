@@ -35,7 +35,7 @@
   <!-- garden silhouette -->
   <ellipse cx="160" cy="175" rx="100" ry="28" fill="#0d3018" opacity="0.9"/>
   <path d="M60 175 Q100 130 160 140 Q220 130 260 175 Z" fill="#145a28"/>
-  <!-- abstract "nine muses"  pillar silhouettes (no names, no story) -->
+  <!-- abstract "nine muses" — pillar silhouettes (no names, no story) -->
   <g fill="#3d2a50" opacity="0.85">
     <path d="M52 175 L58 120 L64 175 Z"/>
     <path d="M76 175 L82 115 L88 175 Z"/>

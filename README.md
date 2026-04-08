@@ -32,6 +32,8 @@ Then open `http://127.0.0.1:8765/` — paths resolve like production.
 | Mastodon | [@willy@social.devilplan.com](https://social.devilplan.com/@willy) |
 | Matrix | [@metalmasteringengineer:matrix.org](https://matrix.to/#/@metalmasteringengineer:matrix.org) |
 
-**Live (GitHub Pages):** [sqazi.sh/wilder-public/](http://sqazi.sh/wilder-public/)
+**Canonical promo (studio site):** [gankmid.co/games/promo/wilder/](https://gankmid.co/games/promo/wilder/)
+
+This repo’s GitHub Pages URL ([sqazi.sh/wilder-public/](http://sqazi.sh/wilder-public/)) **redirects** to the canonical page above.
 
 Issues: typos and broken links welcome.
